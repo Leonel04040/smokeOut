@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/InicioSesion.css">
+    <link rel="icon" href="Imagenes/WhatsApp_Image_2022-11-20_at_4.22.53_AM-removebg-preview.png">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+    <div  align="center">
+        <img style="transform: x(-50%) y(-30%);" src="Imagenes/SmokeFinal.png" class="img" width="700">
+
+        <section class="form-register2" id="formulario">
+        <form action="ingresar" method="post" >
+            <input type="text" name="usuarioIn" class="form-control" placeholder="Usuario:" required><br><br>
+            <input type="password" class="form-control" name="passIn" placeholder="Contraseña:" required><br><br>
+            
+            <div class="g-recaptcha" data-sitekey="6LcpOC4jAAAAAF39W9i141rXwx9US5tr_wA0oFJi"></div>
+            <br>
+
+            <center><button type="submit" class="orange-500">Iniciar Sesión</button></center><br>
+        </form>
+        <center>
+            <button type="button" class="orange-500" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Si no tienes una cuenta, Regístrate Aqui.
+            </button>
+        </center>
+        <br>
+    </div>
+</section>
+
+<!--Elemento no visible, modal-->
+<div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Regístrate:</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="input-div">
+                    <form action="/registrar" method="post" id="registro">
+                        <input type="text" name="nombre" placeholder="Nombre:" class="form-control" required><br>
+                        <input type="text" name="apellido" placeholder="Apellido:" class="form-control" required><br>
+                        <input type="text" name="usuario" placeholder="Nombre de Usuario:" class="form-control" required><br>
+                        <input type="password" name="pass" placeholder="Define tu contraseña:" class="form-control" required><br>
+                        <label for="nacimiento">Fecha de nacimiento:</label><br>
+                        <input type="date" name="nacimiento" placeholder="fecha de nacimiento" class="form-control" required><br>
+                        &nbsp;&nbsp;<label>Sexo:</label><br>
+                        <div align="center">
+                            <label for="input">Hombre</label><input type="radio" name="sexo" value="1" required>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label for="input">Mujer</label><input type="radio" name="sexo" value="0" required><br><br></div>
+                        &nbsp;&nbsp;<label>Cigarros Consumidos Diariamente:</label><br><br>
+                        <div>&nbsp;&nbsp;<select name="cigDiarios" required>
+                            <option value="1" selected>5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="10">21</option>
+                            <option value="12">22</option>
+                            <option value="13">23</option>
+                            <option value="14">24</option>
+                            <option value="15">25</option>
+                            <option value="16">26</option>
+                            <option value="17">27</option>
+                            <option value="18">28</option>
+                            <option value="19">29</option>
+                            <option value="20">30</option>
+                            <option value="11">31</option>
+                            <option value="12">32</option>
+                            <option value="13">33</option>
+                            <option value="14">34</option>
+                            <option value="15">35</option>
+                            <option value="16">36</option>
+                            <option value="17">37</option>
+                            <option value="18">38</option>
+                            <option value="19">39</option>
+                            <option value="20">40</option>
+                            <option value="10">41</option>
+                            <option value="12">42</option>
+                            <option value="13">43</option>
+                            <option value="14">44</option>
+                            <option value="15">45</option>
+                            <option value="16">46</option>
+                            <option value="17">47</option>
+                            <option value="18">48</option>
+                            <option value="19">49</option>
+                            <option value="20">50</option>
+                          </select><br></div><br>
+                        <label for="horaCig">Introduce la hora en que consumes el primer cigarro del día:</label><br><br>
+                        <input type="time" name="horaCig" placeholder="hora del primer cigarro" class="form-control" required><br>
+                            <center><button type="submit" class="button" onclick="validarRegistro(event)">  Registrar  </button></center>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script src="validacion.js"></script>
+</body>
+</html>
